@@ -6,15 +6,18 @@
  * Date: 04/12/2021
  */
 import {StyleSheet} from 'react-native';
+import {scaleHeight, scaleWidth} from "../utils/Tools";
 
 export const BaseStyle = StyleSheet.create({
     textInput: {
-        height: 46,
-        borderRadius: 5,
-        paddingHorizontal: 10,
-        width: '100%',
+        width: scaleWidth(295),
+        height: scaleHeight(48),
+        borderRadius: scaleHeight(24),
+        paddingHorizontal: 20,
         justifyContent: 'space-between',
         flexDirection: 'row',
+        alignSelf: 'center',
+        alignItems: 'center',
     },
     safeAreaView: {
         flex: 1,

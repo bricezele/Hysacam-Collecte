@@ -13,6 +13,7 @@ import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import OnBoardingScreen from '../screens/OnBoardingScreen';
 import {selectAppConfig} from '../redux/config/config.selector';
+import SignInScreen from "../screens/SignInScreen";
 
 const MainStack = createStackNavigator();
 
@@ -21,10 +22,14 @@ function MainNavigator({application}) {
     return (
         <MainStack.Navigator
             headerMode="none"
-            initialRouteName='OnBoardingScreen'>
+            initialRouteName='SignInScreen'>
             <MainStack.Screen
                 name="OnBoardingScreen"
                 component={OnBoardingScreen}
+            />
+            <MainStack.Screen
+                name="SignInScreen"
+                component={SignInScreen}
             />
         </MainStack.Navigator>
     );

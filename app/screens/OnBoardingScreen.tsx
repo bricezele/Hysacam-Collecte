@@ -166,7 +166,9 @@ const styles = StyleSheet.create({
                 ? getStatusBarHeight() + scaleHeight(24)
                 : scaleHeight(24),
         width: scaleWidth(100),
-        height: scaleHeight(20)
+        height: scaleHeight(20),
+        left: scaleWidth(20)
+
     },
     skipView: {
         position: 'absolute',
