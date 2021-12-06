@@ -8,7 +8,6 @@
 import {ThunkDispatch} from 'redux-thunk';
 import {AnyAction} from 'redux';
 import {ConfigTypes} from './config.types';
-import {Currency} from '../../enum/Currency.enum';
 
 const changeTheme = (theme: string) => ({
     type: ConfigTypes.CHANGE_THEME,
@@ -30,10 +29,6 @@ const changeLanguge = (language: any) => ({
     language,
 });
 
-const changeCurrency = (currency: string) => ({
-    type: ConfigTypes.CHANGE_CURRENCY,
-    currency,
-});
 
 const appIntroduction = (introSlidesShown: boolean) => ({
     type: ConfigTypes.APP_INTRO,
@@ -47,19 +42,19 @@ const showConfettiAction = (showConfetti: boolean) => ({
 
 export const onAppIntroduction =
     (introSlidesShown: boolean) =>
-    (dispatch: ThunkDispatch<undefined, undefined, AnyAction>) => {
-        try {
-            dispatch(appIntroduction(introSlidesShown));
-        } catch (error) {
-            // log.error('appIntroduction', error);
-        }
-    };
+        (dispatch: ThunkDispatch<undefined, undefined, AnyAction>) => {
+            try {
+                dispatch(appIntroduction(introSlidesShown));
+            } catch (error) {
+                // log.error('appIntroduction', error);
+            }
+        };
 
 export const onShowConfetti =
     (isConfettiShow: boolean) =>
-    (dispatch: ThunkDispatch<{}, {}, AnyAction>) => {
-        dispatch(showConfettiAction(isConfettiShow));
-    };
+        (dispatch: ThunkDispatch<{}, {}, AnyAction>) => {
+            dispatch(showConfettiAction(isConfettiShow));
+        };
 
 export const onChangeTheme =
     (theme: string) => (dispatch: ThunkDispatch<{}, {}, AnyAction>) => {
@@ -79,9 +74,4 @@ export const onChangeFont =
 export const onChangeLanguage =
     (language: any) => (dispatch: ThunkDispatch<{}, {}, AnyAction>) => {
         dispatch(changeLanguge(language));
-    };
-
-export const onChangeCurrency =
-    (currency: string) => (dispatch: ThunkDispatch<{}, {}, AnyAction>) => {
-        dispatch(changeCurrency(currency));
     };

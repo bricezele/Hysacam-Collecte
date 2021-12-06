@@ -13,6 +13,7 @@ export const BaseColor = {
     grayColor: '#9B9B9B',
     dividerColor: '#BDBDBD',
     whiteColor: '#FFFFFF',
+    redColor: '#f01a28',
     fieldColor: '#F5F5F5',
     navyBlue: '#2d65af',
     kashmir: '#5D6D7E',
@@ -57,14 +58,14 @@ export const ThemeSupport = [
         },
     },
     {
-        theme: 'orange',
+        theme: 'red',
         light: {
             dark: false,
             colors: {
-                primary: '#E5634D',
-                primaryDark: '#C31C0D',
-                primaryLight: '#FF8A65',
-                accent: '#4A90A4',
+                primary: '#f01a28',
+                primaryDark: '#BD0000',
+                primaryLight: '#FF3442',
+                accent: '#048b44',
                 background: '#f2f2f2',
                 card: '#ffffff',
                 text: '#212121',
@@ -74,10 +75,10 @@ export const ThemeSupport = [
         dark: {
             dark: true,
             colors: {
-                primary: '#E5634D',
-                primaryDark: '#C31C0D',
-                primaryLight: '#FF8A65',
-                accent: '#4A90A4',
+                primary: '#f01a28',
+                primaryDark: '#BD0000',
+                primaryLight: '#FF3442',
+                accent: '#048b44',
                 background: '#010101',
                 card: '#121212',
                 text: '#e5e5e7',
@@ -178,14 +179,14 @@ export const ThemeSupport = [
  * Define default theme use for whole application
  */
 export const DefaultTheme = {
-    theme: 'blue',
+    theme: 'red',
     light: {
         dark: false,
         colors: {
-            primary: '#2d65af',
-            primaryDark: '#24508c',
-            primaryLight: '#68c9ef',
-            accent: '#FF8A65',
+            primary: '#f01a28',
+            primaryDark: '#BD0000',
+            primaryLight: '#FF3442',
+            accent: '#048b44',
             background: '#f2f2f2',
             card: '#ffffff',
             text: '#212121',
@@ -195,10 +196,10 @@ export const DefaultTheme = {
     dark: {
         dark: true,
         colors: {
-            primary: '#2d65af',
-            primaryDark: '#24508c',
-            primaryLight: '#68c9ef',
-            accent: '#FF8A65',
+            primary: '#f01a28',
+            primaryDark: '#BD0000',
+            primaryLight: '#FF3442',
+            accent: '#048b44',
             background: '#010101',
             card: '#121212',
             text: '#e5e5e7',

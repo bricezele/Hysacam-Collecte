@@ -9,7 +9,6 @@ import {Appearance} from "react-native";
 import {REHYDRATE} from 'redux-persist';
 import _ from 'lodash';
 import {ConfigTypes} from "./config.types";
-import {Currency} from "../../enum/Currency.enum";
 
 interface ConfigActions {
     payload?: any;
@@ -21,7 +20,6 @@ interface ConfigActions {
     language: string;
     introSlidesShown: boolean;
     showConfetti: boolean;
-    currency: Currency;
 }
 
 export const INITIAL_CONFIG = {
@@ -31,7 +29,6 @@ export const INITIAL_CONFIG = {
     language: null,
     introSlidesShown: true,
     showConfetti: false,
-    currency: Currency.EUR,
     themeType: Appearance.getColorScheme(),
 };
 
@@ -68,11 +65,6 @@ export const configReducer = (state = INITIAL_CONFIG, action: ConfigActions) => 
             return {
                 ...state,
                 introSlidesShown: action.introSlidesShown,
-            };
-        case ConfigTypes.CHANGE_CURRENCY:
-            return {
-                ...state,
-                currency: action.currency,
             };
         default:
             return state;

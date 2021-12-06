@@ -12,20 +12,14 @@ export const BaseSettings = {
     displayName: Config.APP_NAME,
     appVersion: Config.APP_VERSION,
     defaultLanguage: 'fr',
-    languageSupport: ['de', 'en', 'es', 'fr'],
+    languageSupport: ['en', 'fr'],
     resourcesLanguage: {
         en: {
             translation: require('../lang/en.json'),
         },
         fr: {
             translation: require('../lang/fr.json'),
-        },
-        es: {
-            translation: require('../lang/es.json'),
-        },
-        de: {
-            translation: require('../lang/de.json'),
-        },
+        }
     },
     euroToXafRate: 655.69
 };

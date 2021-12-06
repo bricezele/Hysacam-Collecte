@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Hysacam collecte</string>
+    <string name="onesignal_notification_accent_color">f01a28</string>
 </resources>
