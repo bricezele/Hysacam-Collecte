@@ -1,5 +1,5 @@
 /**
- * Project YooLearn
+ * Project Hysacam
  * File user.action
  * Path app/redux/user
  * Created by BRICE ZELE

@@ -1,5 +1,5 @@
 /**
- * Project yoolearn-mobile
+ * Project Hysacam
  * File OffilineNoticeComponent
  * Path app/component
  * Created by BRICE ZELE

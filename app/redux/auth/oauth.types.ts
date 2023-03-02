@@ -1,5 +1,5 @@
 /**
- * Project YooLearn
+ * Project Hysacam
  * File oauth.types
  * Path app/redux/oauth
  * Created by BRICE ZELE

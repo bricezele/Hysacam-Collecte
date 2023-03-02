@@ -1,5 +1,5 @@
 /**
- * Project YooLearn
+ * Project Hysacam
  * File user.reducer
  * Path app/redux/user
  * Created by BRICE ZELE

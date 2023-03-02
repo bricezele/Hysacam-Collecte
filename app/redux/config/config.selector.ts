@@ -1,5 +1,5 @@
 /**
- * Project YooLearn
+ * Project Hysacam
  * File config.selector
  * Path app/redux/config
  * Created by BRICE ZELE

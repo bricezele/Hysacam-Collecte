@@ -1,5 +1,5 @@
 /**
- * Project YooLearn
+ * Project Hysacam
  * File TextComponent
  * Path app/components
  * Created by BRICE ZELE

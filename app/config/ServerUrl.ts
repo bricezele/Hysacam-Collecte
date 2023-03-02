@@ -1,5 +1,5 @@
 /**
- * Project YooLearn
+ * Project Hysacam
  * File ServerUrl
  * Path app/config
  * Created by BRICE ZELE

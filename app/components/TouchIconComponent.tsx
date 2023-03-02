@@ -1,5 +1,5 @@
 /**
- * Project yoolearn-mobile
+ * Project Hysacam
  * File TouchIconComponent
  * Path app/components
  * Created by BRICE ZELE

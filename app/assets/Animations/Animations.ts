@@ -1,5 +1,5 @@
 /**
- * Project YooLearn
+ * Project Hysacam
  * File Animations
  * Path app/assets/Animations
  * Created by BRICE ZELE

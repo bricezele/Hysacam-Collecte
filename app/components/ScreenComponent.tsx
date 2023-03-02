@@ -1,5 +1,5 @@
 /**
- * Project YooLearn
+ * Project Hysacam
  * File index
  * Path app/components/Screen
  * Created by BRICE ZELE
