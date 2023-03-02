@@ -1,4 +1,6 @@
 import OnBoardingScreen from "../screens/OnBoardingScreen";
+import SignUpScreen from "../screens/SignUpScreen";
+import HomeScreen from "../screens/HomeScreen";
 
 /**
  * Project HysacamCollecte
@@ -10,4 +12,7 @@ import OnBoardingScreen from "../screens/OnBoardingScreen";
 export const Routes = {
     OnBoardingScreen: 'OnBoardingScreen',
     SignInScreen: 'SignInScreen',
+    SignUpScreen: 'SignUpScreen',
+    HomeScreen: 'HomeScreen',
+    BottomTabNavigator: 'BottomTabNavigator'
 }

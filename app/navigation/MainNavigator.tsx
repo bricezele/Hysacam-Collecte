@@ -14,15 +14,25 @@ import {createStructuredSelector} from 'reselect';
 import OnBoardingScreen from '../screens/OnBoardingScreen';
 import {selectAppConfig} from '../redux/config/config.selector';
 import SignInScreen from "../screens/SignInScreen";
+import SignUpScreen from "../screens/SignUpScreen";
+import BottomTabNavigator from "./BottomTabNavigator";
+import HomeScreen from "../screens/HomeScreen";
+import {selectUser} from "../redux/auth/oauth.selector";
+import TrajetPlanningScreen from "../screens/TrajetPlanningScreen";
 
 const MainStack = createStackNavigator();
 
-function MainNavigator({application}) {
+function MainNavigator({application, user}) {
     console.log('Application', application);
+    console.log('User', user);
     return (
         <MainStack.Navigator
             headerMode="none"
-            initialRouteName='SignInScreen'>
+            initialRouteName={'SignInScreen'}>
+            <MainStack.Screen
+                name="BottomTabNavigator"
+                component={BottomTabNavigator}
+            />
             <MainStack.Screen
                 name="OnBoardingScreen"
                 component={OnBoardingScreen}
@@ -31,6 +41,19 @@ function MainNavigator({application}) {
                 name="SignInScreen"
                 component={SignInScreen}
             />
+            <MainStack.Screen
+                name="SignUpScreen"
+                component={SignUpScreen}
+            />
+            <MainStack.Screen
+                name="HomeScreen"
+                component={HomeScreen}
+            />
+            <MainStack.Screen
+                name="TrajetPlanningScreen"
+                component={TrajetPlanningScreen}
+            />
+
         </MainStack.Navigator>
     );
 }
@@ -40,6 +63,7 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, AnyAction>) =>
 
 const mapStateToProps = createStructuredSelector({
     application: selectAppConfig,
+    user: selectUser,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainNavigator);

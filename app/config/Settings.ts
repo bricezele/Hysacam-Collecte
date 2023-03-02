@@ -20,6 +20,5 @@ export const BaseSettings = {
         fr: {
             translation: require('../lang/fr.json'),
         }
-    },
-    euroToXafRate: 655.69
+    }
 };

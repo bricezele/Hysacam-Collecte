@@ -26,7 +26,7 @@ export const INITIAL_CONFIG = {
     theme: null,
     font: null,
     force_dark: null,
-    language: null,
+    language: 'fr',
     introSlidesShown: true,
     showConfetti: false,
     themeType: Appearance.getColorScheme(),

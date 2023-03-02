@@ -15,9 +15,51 @@ import {
     StatusBar,
     UIManager,
 } from 'react-native';
-import { scale } from 'react-native-size-matters';
+import {scale} from 'react-native-size-matters';
+import {check, PERMISSIONS, request, RESULTS} from "react-native-permissions"
 
 const scaleValue = PixelRatio.get() / 2;
+
+export const randomlyGetValueFromEnum = (enumValue) => {
+    var rand = Math.floor(Math.random() * Object.keys(enumValue).length);
+    var randColorValue = enumValue[Object.keys(enumValue)[rand]];
+
+    return randColorValue;
+}
+export const handleLocationPermission = async () => {
+    let permissionCheck = '';
+    if (Platform.OS === 'ios') {
+        permissionCheck = await check(PERMISSIONS.IOS.LOCATION_WHEN_IN_USE);
+
+        if (
+            permissionCheck === RESULTS.BLOCKED ||
+            permissionCheck === RESULTS.DENIED
+        ) {
+            const permissionRequest = await request(
+                PERMISSIONS.IOS.LOCATION_WHEN_IN_USE,
+            );
+            permissionRequest === RESULTS.GRANTED
+                ? console.warn('Location permission granted.')
+                : console.warn('location permission denied.');
+        }
+    }
+
+    if (Platform.OS === 'android') {
+        permissionCheck = await check(PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION);
+
+        if (
+            permissionCheck === RESULTS.BLOCKED ||
+            permissionCheck === RESULTS.DENIED
+        ) {
+            const permissionRequest = await request(
+                PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION,
+            );
+            permissionRequest === RESULTS.GRANTED
+                ? console.warn('Location permission granted.')
+                : console.warn('location permission denied.');
+        }
+    }
+};
 
 export const enableExperimental = () => {
     if (Platform.OS === 'android') {
@@ -135,9 +177,9 @@ export const requestLocationPermission = async () =>
                 );
             resolve(
                 grantedPermissionCoarseLocation ===
-                    PermissionsAndroid.RESULTS.GRANTED &&
-                    grantedPermissionFineLocation ===
-                        PermissionsAndroid.RESULTS.GRANTED,
+                PermissionsAndroid.RESULTS.GRANTED &&
+                grantedPermissionFineLocation ===
+                PermissionsAndroid.RESULTS.GRANTED,
             );
         } catch (error) {
             reject(false);
@@ -182,12 +224,10 @@ export const validatePassword = (password: string) => {
 export const fileBaseName = (filename: string) =>
     filename.split('.').slice(0, -1).join('.');
 
-export const getErrorMsg = (error: any) =>
-    error.error?.message?.hasOwnProperty('message')
-        ? Array.isArray(error.error?.message?.message)
-            ? error.error?.message?.message.join('\n')
-            : error.error?.message?.message
-        : error.error?.message;
+export const getErrorMsg = (error: any) => {
+    console.log("Error", error.error.error);
+    return error.error.error;
+}
 
 export const isIphoneX = () => {
     const dimen = Dimensions.get('window');
@@ -224,7 +264,7 @@ export const getStatusBarHeight = (safe = null) =>
 
 export const getBottomSpace = () => (isIphoneX() ? 34 : 0);
 
-const { height } = Dimensions.get('window');
+const {height} = Dimensions.get('window');
 
 const widthDesign = 375;
 const heightDesign = 812 - getStatusBarHeight(); // 44

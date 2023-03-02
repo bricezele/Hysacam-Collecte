@@ -17,19 +17,23 @@ import {Animations} from "../assets/Animations/Animations";
 import {BaseColor, useTheme} from "../config/Theme";
 import {useTranslation} from "react-i18next";
 import {Images} from "../assets/images/Images";
+import {Routes} from "../utils/Routes";
+import {onAppIntroduction} from "../redux/config/config.action";
+import {useDispatch} from "react-redux";
 
 const {width, height} = Dimensions.get('screen');
 const widthScreen = Dimensions.get('window').width;
 const heightScreen = Dimensions.get('window').height;
 
 
-const OnBoardingScreen = () => {
+const OnBoardingScreen = ({navigation}) => {
 
 
     const [id, setId] = useState(0);
     const {navigate} = useNavigation();
     const {colors} = useTheme();
     const {t} = useTranslation();
+    const dispatch = useDispatch();
 
     const DATA = [
         {
@@ -97,6 +101,8 @@ const OnBoardingScreen = () => {
                 showDoneButton={true}
                 renderDoneButton={renderDoneButton}
                 onDone={() => {
+                    dispatch(onAppIntroduction(false));
+                    navigation.navigate(Routes.SignInScreen);
                 }}
                 dotStyle={[styles.dotStyle, {
                     backgroundColor: colors.card
@@ -104,6 +110,8 @@ const OnBoardingScreen = () => {
                 activeDotStyle={[styles.activeDotStyle, {backgroundColor: colors.primary}]}
             />
             <TouchableOpacity onPress={() => {
+                dispatch(onAppIntroduction(false));
+                navigation.navigate(Routes.SignInScreen)
             }} style={styles.skipView}>
                 <Text caption2 style={[styles.txtSkip, {color: colors.primary}]}>{t('skip')}</Text>
             </TouchableOpacity>

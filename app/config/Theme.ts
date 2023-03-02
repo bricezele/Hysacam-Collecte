@@ -232,7 +232,7 @@ export const useTheme = () => {
     const listTheme = ThemeSupport.filter(item => item.theme === themeStorage);
     const theme = listTheme.length > 0 ? listTheme[0] : DefaultTheme;
 
-    if (forceDark) return {theme: theme.dark, colors: theme.dark.colors};
+    if (true) return {theme: theme.dark, colors: theme.dark.colors};
     return {theme: theme.light, colors: theme.light.colors};
 
     return isDarkMode

@@ -21,6 +21,15 @@ import {useTheme} from '../config/Theme';
 
 const RootStack = createStackNavigator();
 
+i18n.use(initReactI18next).init({
+    resources: BaseSettings.resourcesLanguage,
+    lng: BaseSettings.defaultLanguage,
+    fallbackLng: BaseSettings.defaultLanguage,
+    interpolation: {
+        escapeValue: false, // not needed for react!!
+    },
+});
+
 function RootNavigator() {
     const storeLanguage = useSelector(
         (state: RootReducerType) => state.application.language,
@@ -38,11 +47,6 @@ function RootNavigator() {
     });
 
     useEffect(() => {
-        i18n.use(initReactI18next).init({
-            resources: BaseSettings.resourcesLanguage,
-            lng: storeLanguage ?? BaseSettings.defaultLanguage,
-            fallbackLng: BaseSettings.defaultLanguage,
-        });
         if (Platform.OS === 'android')
             StatusBar.setBackgroundColor(colors.primary, true);
         StatusBar.setBarStyle(

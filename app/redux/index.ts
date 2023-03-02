@@ -7,18 +7,23 @@
  */
 import {combineReducers} from 'redux';
 import {configReducer} from './config/config.reducer';
+import {signInReducer} from "./auth/oauth.reducer";
+import {getTrajetReducer, signUpReducer, subscribeToTrajetReducer} from "./user/user.reducer";
 
 export const API = 'API';
 export const ApiAction = ({
-    url = '',
-    method = 'GET',
-    data = null,
-    accessToken = null,
-    onSuccess = () => {},
-    onLoading = () => {},
-    onError = () => {},
-    ...rest
-}) => ({
+                              url = '',
+                              method = 'GET',
+                              data = null,
+                              accessToken = null,
+                              onSuccess = () => {
+                              },
+                              onLoading = () => {
+                              },
+                              onError = () => {
+                              },
+                              ...rest
+                          }) => ({
     type: API,
     payload: {
         url,
@@ -33,6 +38,10 @@ export const ApiAction = ({
 });
 export const RootReducer = combineReducers<any>({
     application: configReducer,
+    user: signInReducer,
+    signup: signUpReducer,
+    getTrajet: getTrajetReducer,
+    subscribeToTrajet: subscribeToTrajetReducer,
 });
 
 export type RootReducerType = ReturnType<typeof RootReducer>;
